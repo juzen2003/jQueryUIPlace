@@ -9,7 +9,7 @@ body
 
 .headerWrapper
 {
-	
+
 }
 
 .header
@@ -51,7 +51,7 @@ body
 }
 
 .menuItem a
-{  
+{
 	border: 1px solid transparent;
 	font-weight:bold;
     color: #FFFFFF;
@@ -113,4 +113,12 @@ body
 .fieldWrap
 {
 	margin:10px 0 0 0;
+}
+
+#menu {
+	width: 400px;
+}
+
+.myalert {
+	float: left; margin-right: .3em;
 }

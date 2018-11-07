@@ -6,6 +6,35 @@
 		<meta name="keywords" content="HTML,CSS,jQuery UI" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 		<link rel="stylesheet" href="styles/style.css" />
+
+		<link rel="stylesheet" href="styles/jquery-ui.css" />
+		<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+		<script src="scripts/jquery-ui.js"></script>
+
+		<script>
+			$( function() {
+				$( ".button" ).button();
+				$( ".button-star" ).button({
+        icon: "ui-icon-star"
+	      });
+
+				$( ".button .button-star" ).click( function( event ) {
+				 event.preventDefault();
+				} );
+			} );
+		</script>
+
+		<script>
+			$( function() {
+				$( document ).tooltip();
+			} );
+		</script>
+		<script>
+			$( function() {
+				$( "#datepicker" ).datepicker();
+			} );
+		</script>
+
 	</head>
 	<body>
 		<div class="headerWrapper">
@@ -34,30 +63,44 @@
 			<div class="content">
 				<form>
 					<h1>Contact Me:</h1>
+
+					<div class="ui-state-highlight ui-corner-all">
+						<p><span class="ui-icon ui-icon-lightbulb myalert"></span>
+						<strong>Warning</strong> Please make sure to pick the date!</p>
+					</div>
+
+					<div class="ui-state-error ui-corner-all">
+						<p><span class="ui-icon ui-icon-alert myalert"></span>
+						<strong>Alert:</strong> You've contact me multiple times.</p>
+					</div>
+
 					<div class="fieldWrap">
-						Your first name: <input type="text" id="txtFirstName" name="txtFirstName" />
+						Your first name: <input type="text" id="txtFirstName" name="txtFirstName" title="Doesn't need to be your first name." />
 					</div>
 					<div class="fieldWrap">
-						Your last name: <input type="text" id="txtLastName" name="txtLastName" />
+						Your last name: <input type="text" id="txtLastName" name="txtLastName" title="Doesn't need to be your last name." />
 					</div>
 					<div class="fieldWrap">
-						What do you want? 
+						What do you want?
 						<div>
-							<textarea cols="20" rows="5" id="txtDate" name="txtDescription"></textarea>
+							<textarea cols="20" rows="5" id="txtDate" name="txtDescription" title="You can share anything." ></textarea>
 						</div>
 					</div>
 					<div class="fieldWrap">
-						What day should I get back to you by? <input type="text" id="txtDate" name="txtDescription" /> (like '01/12/2013')
+						What day should I get back to you by? <input type="text" id="datepicker" name="txtDescription" />
 					</div>
 					<div class="fieldWrap">
-						<input type="submit" id="btnSubmit" value="Submit!" />
+						<input type="submit" id="btnSubmit" value="Submit!" class="button" />
+						<a href="#" class="button">Click Here</a>
+						<a href="#" class="button">This is cool</a>
+						<a href="#" class="button-star">Hello</a>
 					</div>
 				</form>
 			</div>
 		</div>
 		<div class="footerWrapper">
 			<div class="footer">
-			&copy; 2013 Marie Taylor 
+			&copy; 2013 Marie Taylor
 			</div>
 		</div>
 	</body>
